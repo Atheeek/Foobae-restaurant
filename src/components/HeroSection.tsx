@@ -133,7 +133,7 @@ const HeroSection = () => {
           />
 
           <motion.div
-            className="absolute bottom-40 right-4 md:right-24 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
+            className="absolute bottom-40 md:bottom-30 right-4 md:right-24 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
             variants={imageVariants}
           >
             {/* This inner div handles the rotation */}
