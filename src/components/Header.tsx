@@ -36,9 +36,9 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50  transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-sm border-border"
+          ? "bg-background/95 backdrop-blur-sm my-1 rounded-full px-5 mx-24"
           : "bg-transparent border-transparent"
       }`}
     >
@@ -59,7 +59,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-300 relative group"
+                className="text-sm font-[300] text-foreground hover:text-primary transition-colors duration-300 relative group"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -100,7 +100,7 @@ const Header = () => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-300 py-2"
+                    className="text-sm font-mediu text-foreground hover:text-primary transition-colors duration-300 py-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
