@@ -75,27 +75,29 @@ const AboutSection = () => {
       </div>
 
       {/* Full-width Video Section */}
-      <div className="relative w-full overflow-hidden group"> {/* add 'group' here */}
-        <video
-          ref={videoRef}
-          src={videoFile}
-          className="w-full h-[250px] md:h-[500px] object-cover"
-          loop
-        />
+     <div className="relative w-full overflow-hidden group">
+  <video
+    ref={videoRef}
+    src={videoFile}
+    className="w-full h-[250px] md:h-[500px] object-cover"
+    loop
+    autoPlay
+    muted   // ✅ required for autoplay in most browsers
+    playsInline // ✅ prevents full-screen autoplay on iOS
+  />
 
-        {/* Play/Pause Button */}
-        <button
-          onClick={togglePlay}
-          className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 md:group-hover:opacity-100 transition-opacity cursor-pointer"
-        >
-          {isPlaying ? (
-            <PauseCircle className="text-white h-8 w-8" />
-          ) : (
-            <PlayCircle className="text-white h-8 w-8" />
-          )}
-        </button>
-
-      </div>
+  {/* Play/Pause Button */}
+  <button
+    onClick={togglePlay}
+    className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 md:group-hover:opacity-100 transition-opacity cursor-pointer"
+  >
+    {isPlaying ? (
+      <PauseCircle className="text-white h-8 w-8" />
+    ) : (
+      <PlayCircle className="text-white h-8 w-8" />
+    )}
+  </button>
+</div>
 
     </section>
   );
