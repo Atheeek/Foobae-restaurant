@@ -153,35 +153,11 @@ const HeroSection = () => {
           animate="visible"
         >
           {/* --- Floating Leaves for decoration --- */}
-          {/* Adjusted leaf positions - closer but not under food images */}
-          <motion.img
-            src={leaf1}
-            alt="Floating leaf"
-            className="absolute top-0 left-1/4 w-12 opacity-30 blur-sm z-10" // Closer to center
-            variants={fallFromTopVariants} // Leaves still fall from top
-            animate={{ y: [0, -15, 0], rotate: [0, 8, 0] }}
-            transition={{ duration: 10, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
-          />
-          <motion.img
-            src={leaf2}
-            alt="Floating leaf"
-            className="absolute top-1/2 right-1/4 w-14 opacity-25 z-10" // Closer to center
-            variants={fallFromTopVariants} // Leaves still fall from top
-            animate={{ y: [0, 12, 0], x: [0, -8, 0] }}
-            transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
-          />
-          <motion.img
-            src={leaf1}
-            alt="Floating leaf"
-            className="absolute bottom-1/4 left-1/3 w-10 opacity-30 blur-sm z-10" // Closer to center
-            variants={fallFromTopVariants} // Leaves still fall from top
-            animate={{ y: [0, 20, 0], rotate: [0, -12, 0] }}
-            transition={{ duration: 12, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
-          />
+         
 
           {/* Food Bowl 2 (Top Food Image) - Falls from Top */}
           <motion.div
-            className="absolute bottom-30 md:bottom-40 right-4 md:right-24 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
+            className="absolute md:bottom-40 right-4 md:right-24 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
             variants={fallFromTopVariants} // Falls from top
           >
             <motion.div
@@ -209,7 +185,7 @@ const HeroSection = () => {
 
           {/* Food Bowl 1 (Bottom Food Image) - Falls from Bottom */}
           <motion.div
-            className="absolute bottom-10 md:bottom-0 right-20 md:left-0 w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
+            className="absolute bottom-10 md:bottom-0 right-24 md:right-20 md:left-0 w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
             variants={fallFromBottomVariants} // Falls from bottom
           >
             <motion.div
