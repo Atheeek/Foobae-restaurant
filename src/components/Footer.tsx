@@ -13,31 +13,40 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center">
-                <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center">
-                  <span className="text-black font-bold text-lg">F</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold gold-text">FOODBAE</h3>
-                <p className="text-xs text-muted-foreground">— Global Cuisine —</p>
-              </div>
+             
+             <div>
+  <img
+    src="logo.png" // replace with your logo path
+    alt="Foodbae Logo"
+    className="w-16 h-16 object-contain" // adjust size as needed
+  />
+</div>
+
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Experience authentic global flavors with the finest ingredients and traditional recipes. 
               Your culinary journey starts here.
             </p>
-            <div className="flex space-x-3">
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Facebook className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Instagram className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Twitter className="h-4 w-4" />
-              </Button>
-            </div>
+           <div className="flex space-x-3">
+  <a href="https://www.facebook.com/foodbaerestaurant" target="_blank" rel="noopener noreferrer">
+    <Button variant="ghost" size="icon" className="hover:text-black">
+      <Facebook className="h-4 w-4" />
+    </Button>
+  </a>
+
+  <a href="https://www.instagram.com/foodbae_restaurants" target="_blank" rel="noopener noreferrer">
+    <Button variant="ghost" size="icon" className="hover:text-black">
+      <Instagram className="h-4 w-4" />
+    </Button>
+  </a>
+
+  <a href="https://www.twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
+    <Button variant="ghost" size="icon" className="hover:text-black">
+      <Twitter className="h-4 w-4" />
+    </Button>
+  </a>
+</div>
+
           </div>
 
           {/* Quick Links */}
@@ -63,8 +72,8 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="text-primary mt-1 h-4 w-4 flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  123 Main Street, Downtown<br />
-                  City, State 12345
+                 Electronic City<br />
+                  Bangalore 560100, India
                 </span>
               </div>
               <div className="flex items-center space-x-3">
