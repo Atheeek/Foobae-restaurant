@@ -22,7 +22,7 @@ const AboutSection = () => {
   };
   return (
     <section id="about" className="bg-[#0d0d0d] ">
-      <div className="container mx-auto  px-3 md:px-28 py-20">
+      <div className="container mx-auto  px-6 md:px-28 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
@@ -62,7 +62,7 @@ const AboutSection = () => {
               <img
                 src={spicesImage}
                 alt="Traditional spices and ingredients"
-                className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-[350px] md:h-[600px] object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
@@ -75,12 +75,11 @@ const AboutSection = () => {
       </div>
 
       {/* Full-width Video Section */}
-      {/* Full-width Video Section */}
       <div className="relative w-full overflow-hidden group"> {/* add 'group' here */}
         <video
           ref={videoRef}
           src={videoFile}
-          className="w-full h-[500px] object-cover"
+          className="w-full h-[250px] md:h-[500px] object-cover"
           loop
         />
 

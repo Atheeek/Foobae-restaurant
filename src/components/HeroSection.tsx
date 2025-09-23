@@ -1,24 +1,20 @@
 import { Star } from "lucide-react";
-// 1. Import the 'Variants' type
 import { motion, Variants } from "framer-motion";
 
 // --- Asset Imports ---
-// Replace these with your actual image paths
-import foodBowl1 from "@/assets/circle.png"; // Example: Noodles
-import foodBowl2 from "@/assets/food-bowl2.avif"; // Example: Soup
-import foodBowl3 from "@/assets/food-bowl3.avif"; // Example: Ramen
+import foodBowl1 from "@/assets/circle.png";
+import foodBowl2 from "@/assets/food-bowl2.avif";
+import foodBowl3 from "@/assets/food-bowl3.avif";
 import leaf1 from "@/assets/leaf.avif";
 import leaf2 from "@/assets/leaf.avif";
 
-
 // --- Animation Variants ---
-// 2. Add the 'Variants' type to each object
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Each child will animate 0.2s after the previous one
+      staggerChildren: 0.2, // This creates the falling one-by-one effect
     },
   },
 };
@@ -35,14 +31,62 @@ const itemVariants: Variants = {
   },
 };
 
-const imageVariants: Variants = {
-  hidden: { scale: 0.5, opacity: 0 },
+// 1. New "fall from top" animation variants (default for food bowls and leaves)
+const fallFromTopVariants: Variants = {
+  hidden: {
+    y: -100, // Start 100px above the final position
+    opacity: 0,
+    rotate: -15, // Start with a slight angle
+  },
   visible: {
-    scale: 1,
+    y: 0,
     opacity: 1,
+    rotate: 0,
     transition: {
-      duration: 0.8,
-      ease: [0.6, 0.05, 0.01, 0.9], // Cubic bezier array for a smooth ease
+      type: "spring", // Use a spring animation for a nice bounce
+      stiffness: 50,
+      damping: 10,
+      duration: 1,
+    },
+  },
+};
+
+// 2. New "fall from bottom" animation variants
+const fallFromBottomVariants: Variants = {
+  hidden: {
+    y: 100, // Start 100px below the final position
+    opacity: 0,
+    rotate: 15, // Start with a slight angle
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      stiffness: 50,
+      damping: 10,
+      duration: 1,
+    },
+  },
+};
+
+// 3. New "fall from left" animation variants
+const fallFromLeftVariants: Variants = {
+  hidden: {
+    x: 100,       // Start 100px to the right
+    opacity: 0,
+    rotate: 15,   // Optional: slight angle (positive for clockwise)
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      stiffness: 50,
+      damping: 10,
+      duration: 1,
     },
   },
 };
@@ -77,7 +121,6 @@ const HeroSection = () => {
             Match
           </motion.h1>
 
-
           <motion.p
             className="text-sm  sm:text-lg md:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 mb-8"
             variants={itemVariants}
@@ -85,8 +128,6 @@ const HeroSection = () => {
             Discover bold flavors and unforgettable dishes in a place where every
             craving is satisfied with the perfect bite, crafted just for you.
           </motion.p>
-
-
 
           <motion.div
             className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 text-gray-300 text-sm sm:text-base md:text-base"
@@ -102,7 +143,6 @@ const HeroSection = () => {
             </div>
             <span className="text-gray-500 text-xs sm:text-sm md:text-sm">Average Rating</span>
           </motion.div>
-
         </motion.div>
 
         {/* --- Right Column: Food Images --- */}
@@ -113,30 +153,37 @@ const HeroSection = () => {
           animate="visible"
         >
           {/* --- Floating Leaves for decoration --- */}
+          {/* Adjusted leaf positions - closer but not under food images */}
           <motion.img
-            src={leaf1} alt="Floating leaf"
-            className="absolute -top-4 left-10 w-12 opacity-30 blur-sm z-10"
+            src={leaf1}
+            alt="Floating leaf"
+            className="absolute top-0 left-1/4 w-12 opacity-30 blur-sm z-10" // Closer to center
+            variants={fallFromTopVariants} // Leaves still fall from top
             animate={{ y: [0, -15, 0], rotate: [0, 8, 0] }}
             transition={{ duration: 10, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
           />
           <motion.img
-            src={leaf2} alt="Floating leaf"
-            className="absolute top-1/3 -right-4 w-14 opacity-25 z-10"
+            src={leaf2}
+            alt="Floating leaf"
+            className="absolute top-1/2 right-1/4 w-14 opacity-25 z-10" // Closer to center
+            variants={fallFromTopVariants} // Leaves still fall from top
             animate={{ y: [0, 12, 0], x: [0, -8, 0] }}
             transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
           />
           <motion.img
-            src={leaf1} alt="Floating leaf"
-            className="absolute bottom-8 left-1/4 w-10 opacity-30 blur-sm z-10"
+            src={leaf1}
+            alt="Floating leaf"
+            className="absolute bottom-1/4 left-1/3 w-10 opacity-30 blur-sm z-10" // Closer to center
+            variants={fallFromTopVariants} // Leaves still fall from top
             animate={{ y: [0, 20, 0], rotate: [0, -12, 0] }}
             transition={{ duration: 12, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
           />
 
+          {/* Food Bowl 2 (Top Food Image) - Falls from Top */}
           <motion.div
-            className="absolute bottom-40 md:bottom-30 right-4 md:right-24 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
-            variants={imageVariants}
+            className="absolute bottom-30 md:bottom-40 right-4 md:right-24 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
+            variants={fallFromTopVariants} // Falls from top
           >
-            {/* This inner div handles the rotation */}
             <motion.div
               className="w-full h-full"
               animate={{ rotate: 360 }}
@@ -146,11 +193,11 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
 
+          {/* Food Bowl 3 (Left Food Image) - Falls from Left */}
           <motion.div
             className="absolute top-64 right-0 md:right-32 -translate-y-1/2 w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
-            variants={imageVariants}
+            variants={fallFromLeftVariants} // Falls from left
           >
-            {/* This inner div handles the rotation */}
             <motion.div
               className="w-full h-full"
               animate={{ rotate: -360 }}
@@ -160,11 +207,11 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
 
+          {/* Food Bowl 1 (Bottom Food Image) - Falls from Bottom */}
           <motion.div
             className="absolute bottom-10 md:bottom-0 right-20 md:left-0 w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl shadow-black/50 z-20"
-            variants={imageVariants}
+            variants={fallFromBottomVariants} // Falls from bottom
           >
-            {/* This inner div handles the rotation */}
             <motion.div
               className="w-full h-full"
               animate={{ rotate: 360 }}
