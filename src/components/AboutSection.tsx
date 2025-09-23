@@ -21,8 +21,8 @@ const AboutSection = () => {
     }
   };
   return (
-    <section id="about" className="bg-[#0d0d0d] px-3 md:px-28">
-      <div className="container mx-auto px-4 py-20">
+    <section id="about" className="bg-[#0d0d0d] ">
+      <div className="container mx-auto  px-3 md:px-28 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">

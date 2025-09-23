@@ -29,7 +29,7 @@ const itemVariants: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.8,
       ease: "easeOut",
     },
   },
