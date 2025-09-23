@@ -157,7 +157,7 @@ const HeroSection = () => {
           <motion.img
             src={leaf1}
             alt="Floating leaf"
-            className="absolute top-0 left-10 md:left-60 w-12 blur-[1px] rotate-180 z-10" // Closer to center
+            className="absolute top-0 left-14 md:left-60 w-12 blur-[1px] rotate-180 z-10" // Closer to center
             variants={fallFromTopVariants} // Leaves still fall from top
             animate={{ y: [0, -15, 0], rotate: [0, 8, 0] }}
             transition={{ duration: 10, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
