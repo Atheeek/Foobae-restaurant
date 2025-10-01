@@ -5,109 +5,106 @@ import React, { forwardRef } from 'react';
 const Component = forwardRef<HTMLElement>((props, ref) => {
   return (
     <ReactLenis root>
-      <main className="bg-black" ref={ref}>
-        <section className="text-white w-full bg-slate-950">
-          <div className="grid grid-cols-3 gap-2">
-            
-            {/* Left Column */}
-            <div className="grid gap-2">
-              <figure className="w-full">
+      <main className='bg-black' ref={ref}>
+        <div className='wrapper'>
+        </div>
+
+        <section className='text-white w-full bg-slate-950'>
+          <div className='grid grid-cols-12 gap-2'>
+            <div className='grid gap-2 col-span-4'>
+              <figure className='w-full'>
                 <img
-                  src="https://plus.unsplash.com/premium_photo-1661883237884-263e8de8869b?q=80&w=1189&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://plus.unsplash.com/premium_photo-1669742928112-19364a33b530?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  alt='Indian restaurant interior'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full">
+              <figure className='w-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1696950170773-db0bf33ca0ca?q=80&w=880&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&auto=format&fit=crop'
+                  alt='Biryani'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full">
+              <figure className='w-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1718601980986-0ce75101d52d?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://plus.unsplash.com/premium_photo-1694141252774-c937d97641da?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  alt='Butter chicken'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full">
+              <figure className='w-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1685904042960-66242a0ac352?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&auto=format&fit=crop'
+                  alt='Indian thali'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full">
+              <figure className='w-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1719411182379-ffd97c1f7ebf?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&auto=format&fit=crop'
+                  alt='Naan bread'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
             </div>
-
-            {/* Middle Sticky Column */}
-            <div className="grid gap-2 grid-rows-3 sticky top-0 h-screen">
-              <figure className="w-full h-full">
+            <div className='sticky top-0 h-screen w-full col-span-4 gap-2 grid grid-rows-3'>
+              <figure className='w-full h-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1718969604981-de826f44ce15?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 h-full w-full object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop'
+                  alt='Restaurant dining area'
+                  className='transition-all duration-300 h-full w-full align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full h-full">
+              <figure className='w-full h-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1476180814856-a36609db0493?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 h-full w-full object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1552566626-52f8b828add9?w=500&auto=format&fit=crop'
+                  alt='Indian restaurant ambiance'
+                  className='transition-all duration-300 h-full w-full align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full h-full">
+              <figure className='w-full h-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1595407660626-db35dcd16609?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 h-full w-full object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&auto=format&fit=crop'
+                  alt='Restaurant table setup'
+                  className='transition-all duration-300 h-full w-full align-bottom object-cover rounded-md'
                 />
               </figure>
             </div>
-
-            {/* Right Column */}
-            <div className="grid gap-2">
-              <figure className="w-full">
+            <div className='grid gap-2 col-span-4'>
+              <figure className='w-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1719547907790-f661a88302c2?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1696265350630-efa107c33990?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  alt='Masala dosa'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full">
+              <figure className='w-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1599054799131-4b09c73a63cf?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&auto=format&fit=crop'
+                  alt='Samosas'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full">
+              <figure className='w-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1550367363-ea12860cc124?q=80&w=1935&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1574484284002-952d92456975?w=500&auto=format&fit=crop'
+                  alt='Tandoori chicken'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full">
+              <figure className='w-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1714328101501-3594de6cb80f?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500&auto=format&fit=crop'
+                  alt='Paneer tikka'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
-              <figure className="w-full">
+              <figure className='w-full'>
                 <img
-                  src="https://images.unsplash.com/photo-1719554873571-0fd6bf322bb1?w=500&auto=format&fit=crop"
-                  alt=""
-                  className="transition-all duration-300 w-full h-96 object-cover rounded-md"
+                  src='https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?w=500&auto=format&fit=crop'
+                  alt='Indian sweets'
+                  className='transition-all duration-300 w-full h-96 align-bottom object-cover rounded-md'
                 />
               </figure>
             </div>
@@ -119,4 +116,5 @@ const Component = forwardRef<HTMLElement>((props, ref) => {
 });
 
 Component.displayName = 'Component';
+
 export default Component;
