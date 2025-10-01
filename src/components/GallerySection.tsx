@@ -90,8 +90,8 @@ const GallerySection = () => {
             </TabsContent> */}
           </Tabs>
         </div>
-      <StickyScroll />
       </div>
+      <StickyScroll />
      
 
     </section>
