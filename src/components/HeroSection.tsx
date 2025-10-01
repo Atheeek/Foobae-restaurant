@@ -187,7 +187,7 @@ const HeroSection = () => {
             <motion.div
               className="w-full h-full"
               animate={{ rotate: 360 }}
-              transition={{ ease: "linear", duration: 40, repeat: Infinity }}
+              transition={{ ease: "linear", duration: 30, repeat: Infinity }}
             >
               <img
                 src={foodBowl2}
@@ -221,7 +221,7 @@ const HeroSection = () => {
             <motion.div
               className="w-full h-full"
               animate={{ rotate: 360 }}
-              transition={{ ease: "linear", duration: 50, repeat: Infinity }}
+              transition={{ ease: "linear", duration: 30, repeat: Infinity }}
             >
               <img
                 src={foodBowl1}

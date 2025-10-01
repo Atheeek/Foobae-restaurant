@@ -178,7 +178,7 @@ const MenuSection = () => {
     { key: 'starter', label: 'Starter' },
     { key: 'mainDishes', label: 'Main Dishes' },
     { key: 'desserts', label: 'Desserts' },
-    { key: 'wines', label: 'Wines' },
+    // { key: 'wines', label: 'Wines' },
   ];
 
   return (
