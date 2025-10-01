@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import spicesImage from "@/assets/spices-ingredients.jpg";
+import spicesImage from "@/assets/gallery-2.jpg";
 
 const ContactSection = () => {
   const { toast } = useToast();

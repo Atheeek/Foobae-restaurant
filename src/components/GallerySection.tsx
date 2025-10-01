@@ -5,6 +5,7 @@ import gallery2 from "@/assets/gallery-2.jpg";
 import heroFood from "@/assets/hero-food.jpg";
 import spicesImage from "@/assets/spices-ingredients.jpg";
 import restaurantDishes from "@/assets/restaurant-dishes.jpg";
+import StickyScroll from '@/components/ui/sticky-scroll';
 
 const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -30,16 +31,16 @@ const GallerySection = () => {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-20 bg-background">
+    <section id="gallery" className="py-20  bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Our Gallery</h2>
           <div className="decorative-dots"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-9xl  mx-auto">
           <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-12 bg-muted">
+            {/* <TabsList className="grid w-full grid-cols-4 mb-12 bg-muted">
               {categories.map((category, index) => (
                 <TabsTrigger 
                   key={category.id} 
@@ -55,9 +56,9 @@ const GallerySection = () => {
                   )}
                 </TabsTrigger>
               ))}
-            </TabsList>
+            </TabsList> */}
 
-            <TabsContent value={activeCategory} className="mt-0">
+            {/* <TabsContent value={activeCategory} className="mt-0">
               {filteredItems.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
                   {filteredItems.map((item) => (
@@ -86,10 +87,13 @@ const GallerySection = () => {
                   </p>
                 </div>
               )}
-            </TabsContent>
+            </TabsContent> */}
           </Tabs>
         </div>
+      <StickyScroll />
       </div>
+     
+
     </section>
   );
 };
