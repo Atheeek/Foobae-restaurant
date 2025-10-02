@@ -32,7 +32,7 @@ const AboutSection = () => {
               <div className="decorative-dots"></div>
             </div>
 
-            <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
+            <div className="space-y-2 text-lg leading-relaxed text-muted-foreground">
               <p>
                 Foodbae is one of the experts in the art of cooking global cuisine dishes.
                 It is the best experience for the food lovers, as the taste, texture, color, and

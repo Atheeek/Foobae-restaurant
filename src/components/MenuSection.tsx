@@ -108,41 +108,41 @@ const menuData = {
       largeImage: "https://images.pexels.com/photos/6397585/pexels-photo-6397585.jpeg?auto=compress&cs=tinysrgb&w=1000&h=667&dpr=1",
     }
   ],
-  wines: [
-    {
-      id: 13,
-      name: "Black Wine",
-      price: "$25.50",
-      description: "Rich red wine with dark fruit notes and smooth finish.",
-      image: "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
-      largeImage: "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=1000&h=667&dpr=1",
-    },
-    {
-      id: 14,
-      name: "La Marca",
-      price: "$40.00",
-      description: "Fresh, crisp sparkling wine with a fruity aroma.",
-      image: "https://images.pexels.com/photos/1839818/pexels-photo-1839818.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
-      largeImage: "https://images.pexels.com/photos/1839818/pexels-photo-1839818.jpeg?auto=compress&cs=tinysrgb&w=1000&h=667&dpr=1",
-      tag: "Seasonal"
-    },
-    {
-      id: 15,
-      name: "Crawford Sauvignon",
-      price: "$10.00",
-      description: "Light-bodied white wine with citrus and tropical fruit flavors.",
-      image: "https://images.pexels.com/photos/2796177/pexels-photo-2796177.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
-      largeImage: "https://images.pexels.com/photos/2796177/pexels-photo-2796177.jpeg?auto=compress&cs=tinysrgb&w=1000&h=667&dpr=1",
-    },
-    {
-      id: 16,
-      name: "Vineyard Cabernet",
-      price: "$10.00",
-      description: "Full-bodied red with oak and berry undertones.",
-      image: "https://images.pexels.com/photos/774455/pexels-photo-774455.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
-      largeImage: "https://images.pexels.com/photos/774455/pexels-photo-774455.jpeg?auto=compress&cs=tinysrgb&w=1000&h=667&dpr=1",
-    }
-  ]
+  // wines: [
+  //   {
+  //     id: 13,
+  //     name: "Black Wine",
+  //     price: "$25.50",
+  //     description: "Rich red wine with dark fruit notes and smooth finish.",
+  //     image: "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
+  //     largeImage: "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=1000&h=667&dpr=1",
+  //   },
+  //   {
+  //     id: 14,
+  //     name: "La Marca",
+  //     price: "$40.00",
+  //     description: "Fresh, crisp sparkling wine with a fruity aroma.",
+  //     image: "https://images.pexels.com/photos/1839818/pexels-photo-1839818.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
+  //     largeImage: "https://images.pexels.com/photos/1839818/pexels-photo-1839818.jpeg?auto=compress&cs=tinysrgb&w=1000&h=667&dpr=1",
+  //     tag: "Seasonal"
+  //   },
+  //   {
+  //     id: 15,
+  //     name: "Crawford Sauvignon",
+  //     price: "$10.00",
+  //     description: "Light-bodied white wine with citrus and tropical fruit flavors.",
+  //     image: "https://images.pexels.com/photos/2796177/pexels-photo-2796177.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
+  //     largeImage: "https://images.pexels.com/photos/2796177/pexels-photo-2796177.jpeg?auto=compress&cs=tinysrgb&w=1000&h=667&dpr=1",
+  //   },
+  //   {
+  //     id: 16,
+  //     name: "Vineyard Cabernet",
+  //     price: "$10.00",
+  //     description: "Full-bodied red with oak and berry undertones.",
+  //     image: "https://images.pexels.com/photos/774455/pexels-photo-774455.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
+  //     largeImage: "https://images.pexels.com/photos/774455/pexels-photo-774455.jpeg?auto=compress&cs=tinysrgb&w=1000&h=667&dpr=1",
+  //   }
+  // ]
 };
 // --- MenuItem Component ---
 const MenuItem = ({ item, onHover, isActive }) => (
@@ -165,7 +165,7 @@ const MenuItem = ({ item, onHover, isActive }) => (
 
 // --- MenuSection Component ---
 const MenuSection = () => {
-  const [activeCategory, setActiveCategory] = useState('wines');
+  const [activeCategory, setActiveCategory] = useState('starter');
   const [activeItem, setActiveItem] = useState(null);
 
   useEffect(() => {
