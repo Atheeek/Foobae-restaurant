@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence, Variants, easeIn, easeOut } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,16 +16,55 @@ const Header = () => {
     { label: "CONTACTS", href: "#contacts" },
   ];
 
+  // Effect to handle header style on scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const mobileMenuVariants: Variants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: easeOut } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.2, ease: easeIn } },
+  // Effect to prevent scrolling when the mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
+
+
+  // --- NEW: Variants for the full-screen menu container ---
+  // This will orchestrate the animation of its children
+  const menuVariants: Variants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08, // Stagger effect for each child
+        ease: "easeOut",
+      },
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            staggerChildren: 0.05,
+            staggerDirection: -1, // Reverse stagger on exit
+            ease: "easeIn",
+        }
+    }
+  };
+
+  // --- NEW: Variants for each navigation link ---
+  const navLinkVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+    exit: { opacity: 0, y: 20, transition: { duration: 0.3, ease: "easeIn" } },
   };
 
   const handleScrollToMenu = () => {
@@ -74,11 +113,11 @@ const Header = () => {
                 View Menu
               </Button>
 
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu Button - The z-index ensures it's above the overlay */}
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden"
+                className="md:hidden z-50" // Ensure button is clickable above the menu
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -88,38 +127,45 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Navigation (separate from header) */}
+      {/* --- IMPROVED: Mobile Navigation Overlay --- */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="fixed top-20 left-0 right-0 z-40 md:hidden py-6 border-t border-border bg-[#0d0d0d]/95 backdrop-blur-md shadow-lg"
-            variants={mobileMenuVariants}
+            // --- UPDATED: Full-screen overlay styling ---
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/95 backdrop-blur-md md:hidden"
+            variants={menuVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
-            <nav className="flex flex-col space-y-4 px-6">
+            {/* --- UPDATED: Centered navigation with larger text --- */}
+            <nav className="flex flex-col items-center text-center space-y-8">
               {navItems.map((item) => (
-                <a
+                <motion.a
                   key={item.label}
                   href={item.href}
-                  className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-300 py-2"
+                  // --- NEW: Apply variants to each link ---
+                  variants={navLinkVariants}
+                  className="text-3xl font-light text-foreground hover:text-primary transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </motion.a>
               ))}
 
-              <Button
-                variant="default"
-                className="mt-2 w-full"
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  handleScrollToMenu();
-                }}
-              >
-                View Menu
-              </Button>
+              {/* --- UPDATED: Button is now part of the animated list --- */}
+              <motion.div variants={navLinkVariants} className="pt-4">
+                <Button
+                  variant="default"
+                  size="lg"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    handleScrollToMenu();
+                  }}
+                >
+                  View Menu
+                </Button>
+              </motion.div>
             </nav>
           </motion.div>
         )}
