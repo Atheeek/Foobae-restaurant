@@ -82,7 +82,7 @@ const Header = () => {
             : "bg-transparent border-transparent"
         }`}
       >
-        <div className="container mx-auto py-3 px-4">
+        <div className="container mx-auto py-1 md:py-3 px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center justify-center">

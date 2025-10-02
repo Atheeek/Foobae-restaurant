@@ -1,6 +1,6 @@
 import { Clock, Phone, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import spicesImage from "@/assets/spices-ingredients.jpg";
+import spicesImage from "@/assets/biryani-masala-600x600.jpeg";
 
 const DeliverySection = () => {
   const deliveryInfo = {
@@ -42,7 +42,7 @@ const DeliverySection = () => {
               <div className="absolute inset-0 flex items-center justify-center p-8">
                 <div className="text-center">
                   <div className="text-6xl text-primary mb-4">"</div>
-                  <blockquote className="text-white text-xl leading-relaxed font-medium">
+                  <blockquote className="text-white text-xl leading-relaxed font-[400]">
                     {deliveryInfo.quote}
                   </blockquote>
                   <div className="text-6xl text-primary mt-4 rotate-180">"</div>
