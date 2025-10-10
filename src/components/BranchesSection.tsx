@@ -45,7 +45,7 @@ const BranchesSection = () => {
     {
       name: "FOODBAE - Ottapalam",
       address: "SH 26, near Lakshmi Hospital, Ottapalam, Kerala",
-      mapsLink: "https://maps.app.goo.gl/JkaLNoeG37jbreT38",
+      mapsLink: "https://share.google/AKmPHlaye0RaDNSHR",
       rating: 4.3,
       reviews: 958,
       price: "₹200–400",
