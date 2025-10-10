@@ -23,7 +23,7 @@ const BranchesSection = () => {
     {
       name: "FOODBAE - Ajmera Avenue",
       address: "Neeladri Rd, Doddathoguru, Electronic City, Bengaluru, Karnataka",
-      mapsLink: "https://maps.app.goo.gl/example1", 
+      mapsLink: "https://maps.app.goo.gl/pfeQ8jYwk3V7P9PXA", 
       rating: 4.7,
       reviews: 345,
       price: "₹200–400",
@@ -34,7 +34,7 @@ const BranchesSection = () => {
     {
       name: "FOODBAE - Krishnagiri",
       address: "Service Rd, opp. to GRT Jewellers, Krishnagiri, Tamil Nadu",
-      mapsLink: "https://maps.app.goo.gl/example2",
+      mapsLink: "https://maps.app.goo.gl/m5WYdeMv1R18poMb8",
       rating: 4.6,
       reviews: 3700,
       price: "₹200–400",
@@ -45,7 +45,7 @@ const BranchesSection = () => {
     {
       name: "FOODBAE - Ottapalam",
       address: "SH 26, near Lakshmi Hospital, Ottapalam, Kerala",
-      mapsLink: "https://maps.app.goo.gl/example3",
+      mapsLink: "https://maps.app.goo.gl/JkaLNoeG37jbreT38",
       rating: 4.3,
       reviews: 958,
       price: "₹200–400",

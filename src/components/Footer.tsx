@@ -128,7 +128,7 @@ const Footer = () => {
           <Button 
             variant="ghost" 
             onClick={scrollToTop}
-            className="text-primary hover:text-primary-glow group"
+            className="text-primary hover:text-black group"
           >
             Back To Top
             <ArrowUp className="ml-2 h-4 w-4 group-hover:-translate-y-1 transition-transform" />
