@@ -33,7 +33,7 @@ const locations = [
   { name: "Ottapalam", placeId: "ChIJMzjwUt3bpzsRbRBLQbE0uXU" },
 ];
 
-const GOOGLE_MAPS_API_KEY = "AIzaSyB8Z-9vlITIqlvT_PBb-xLGcOGse8lLimE"; // MUST REPLACE
+const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // For Vite
 const REVIEWS_PER_BRANCH_FOR_ALL_VIEW = 2;
 
 const TestimonialsSection = () => {
