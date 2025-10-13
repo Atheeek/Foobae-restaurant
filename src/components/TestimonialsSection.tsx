@@ -90,16 +90,24 @@ const TestimonialsSection = () => {
     if (locationName === "All") {
       let topReviewsFromEachLocation: Review[] = [];
       locations.forEach(location => {
-        const reviewsForThisLocation = sourceReviews.filter(review => review.locationName === location.name).sort((a, b) => b.rating - a.rating).slice(0, REVIEWS_PER_BRANCH_FOR_ALL_VIEW);
+        const reviewsForThisLocation = sourceReviews
+          .filter(review => review.locationName === location.name)
+          .filter(review => review.rating >= 4) // <-- ADDED: Filter for min 4 stars
+          .sort((a, b) => b.rating - a.rating)
+          .slice(0, REVIEWS_PER_BRANCH_FOR_ALL_VIEW);
         topReviewsFromEachLocation.push(...reviewsForThisLocation);
       });
       setFilteredReviews(shuffleArray(topReviewsFromEachLocation));
     } else {
-      const reviewsForThisLocation = sourceReviews.filter(review => review.locationName === locationName).sort((a, b) => b.rating - a.rating).slice(0, 5);
+      const reviewsForThisLocation = sourceReviews
+        .filter(review => review.locationName === locationName)
+        .filter(review => review.rating >= 4) // <-- ADDED: Filter for min 4 stars
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, 5);
       setFilteredReviews(reviewsForThisLocation);
     }
   };
-  
+
   useEffect(() => {
     if (isPaused || filteredReviews.length <= 1) { if (autoplayInterval.current) clearInterval(autoplayInterval.current); return; }
     autoplayInterval.current = setInterval(() => { nextReview(); }, 5000);
